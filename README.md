@@ -8,11 +8,11 @@ Today I bring to you a script to install Java in [Termux](https://termux.com) wi
 | CPU Architecture | Java support |
 | ---------------- | ------------ |
 | `aarch64` | `11` & `8` |
-| | |
+| `armv8` | `11` & `8` |
 | `arm64` | `11` & `8` |
 | `armhf` | `8` |
 | `armv7l` | `8` |
-| `arm/arm32/armv7/aarch32` | `8` |
+| `arm/arm32/arm-v7a` | `8` |
 | `armv8l` | `8` |
 
 _Note: JDK 8 May be buggy, Anyhelp would be appreciated._
