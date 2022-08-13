@@ -1,8 +1,5 @@
 [![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Fsuhan-paradkar%2Fjava-in-termux&count_bg=%2367CB1B&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=true)](https://hits.seeyoufarm.com)
 
-# This repository is now archived if you want to continue development you are free to fork the repository and use the binaries after the consent of the mentioned authorsq
-
-
 # Hello People,
 Today I bring to you a script to install java in [Termux](https://termux.com) without root!
 
@@ -10,18 +7,18 @@ Today I bring to you a script to install java in [Termux](https://termux.com) wi
 
 # Downloads Available for
 
-- aarch64
-- armv8
-- arm64
+- `aarch64`
+- `armv8`
+- `arm64`
 
-_Note: all above cpu is 64-bit and uses same binary(jdk)_
+_Note: all CPU above is 64-bit and uses same JDK binary.
 
-- armhf
-- armv7l
-- arm/arm32/armv7/aarch32
-- armv8l
+- `armhf`
+- 'armv7l`
+- `arm/arm32/armv7/aarch32`
+- `armv8l`
 
-_Note : all above cpu except armv8l is 32-bit and uses same binary(jdk). armv8l is 64-bit but acts like 32-bit, hence jdk8_
+_Note : all CPU above except `armv8l` is 32-bit and uses the same `JDK` binary. Also `armv8l` acts like 32-bit, hence jdk8_
 
 _JDK8 May be buggy... Help is required to resolve bugs... JDK11 is tested...so 64 bit machines are lucky_
 
@@ -34,7 +31,6 @@ cd java-in-termux
 chmod +x install.sh
 ```
 **and**
-
 ```
   bash install.sh
 ```
@@ -42,10 +38,9 @@ chmod +x install.sh
 - Package is about 200+MB(jdk11), 70MB(jdk8) or just 20MB (incase of partial installation for 64-bit cpus) and needs constant internet for proper installation
 - Restart termux after installation
 
-
 # Note
-- I have not compiled jdk, just wrote script
-- Jdk 8 is by [Hax4us](https://github.com/Hax4us/java) , compiled by me.
-- Jdk 11(partial) is from JVDroid app.
-- Jdk 11 is from Lzhiyong's repo [Termux-ndk](https://github.com/Lzhiyong/termux-ndk/tree/master/openjdk-build)
-- Jdk 9 is archived termux's disabled package
+- I did'nt compiled the JDK's, I just wrote the script
+- JDK 8 is by [Hax4us](https://github.com/Hax4us/java) , compiled by me.
+- JDK11(partial) is from JVDroid app.
+- JDK11 is from Lzhiyong's repo [Termux-ndk](https://github.com/Lzhiyong/termux-ndk/tree/master/openjdk-build)
+- JDK9 is archived termux's disabled package
