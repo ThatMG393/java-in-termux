@@ -35,7 +35,7 @@ chmod +x install.sh
   bash install.sh
 ```
 - Java will be installed, check it by running `java --version` command from terminal
-- Package is about 200+MB(jdk11), 70MB(jdk8) or just 20MB (incase of partial installation for 64-bit cpus) and needs constant internet for proper installation
+- Package is about ~200MB(JDK11), 70MB(JDK8) or just 20MB (incase of partial installation for 64-bit cpus) and needs constant internet for proper installation
 - Restart termux after installation
 
 # Note
