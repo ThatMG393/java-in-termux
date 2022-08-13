@@ -3,26 +3,19 @@
 # Hello People,
 Today I bring to you a script to install Java in [Termux](https://termux.com) without root!
 
-**Availability: openjdk-11.0.1 and openjdk8 for 64-bit cpu's while only jdk-8 for 32-bit cpu's. 64-bit cpu can opt partial ar full version**
-
 # Downloads Available for
+**You can check your CPU architecture by using: `uname -a`**
+| CPU Architecture | Java support |
+| ---------------- | ------------ |
+| `aarch64` | `11` & `8` |
+| | |
+| `arm64` | `11` & `8` |
+| `armhf` | `8` |
+| `armv7l` | `8` |
+| `arm/arm32/armv7/aarch32` | `8` |
+| `armv8l` | `8` |
 
-- `aarch64`
-- `armv8`
-- `arm64`
-
-_Note: all CPU's above is 64-bit and uses same `JDK` binary.
-
-- `armhf`
-- `armv7l`
-- `arm/arm32/armv7/aarch32`
-- `armv8l`
-
-_Note : all CPU's above except `armv8l` is 32-bit and uses the same `JDK` binary. Also `armv8l` acts like 32-bit, hence jdk8_
-
-_JDK8 May be buggy... Help is required to resolve bugs... JDK11 is tested...so 64 bit machines are lucky_
-
-- **You may check your architecture by using: `uname -a`**
+_Note: JDK 8 May be buggy, Anyhelp would be appreciated._
 
 # Installation
 ```
