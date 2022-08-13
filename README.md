@@ -3,7 +3,7 @@
 # Hello People,
 Today I bring to you a script to install Java in [Termux](https://termux.com) without root!
 
-# Downloads Available for
+# Available for
 **You can check your CPU architecture by using: `uname -a`**
 | CPU Architecture | Java support |
 | ---------------- | ------------ |
@@ -15,24 +15,17 @@ Today I bring to you a script to install Java in [Termux](https://termux.com) wi
 | `arm/arm32/arm-v7a` | `8` |
 | `armv8l` | `8` |
 
-_Note: JDK 8 May be buggy, Anyhelp would be appreciated._
+_Note: JDK 8 May be buggy, Any help would be appreciated._
 
 # Installation
 ```
-git clone https://github.com/ThatMG393/java-in-termux.git --depth=1
-cd java-in-termux
-chmod +x install.sh
+git clone --depth 1 https://github.com/ThatMG393/java-in-termux.git && cd java-in-termux && bash install.sh
 ```
-**and**
-```
-  bash install.sh
-```
-- Java will be installed, check it by running `java --version` command from terminal
-- Package is about ~200MB(JDK11), 70MB(JDK8) or just 20MB (incase of partial installation for 64-bit cpus) and needs constant internet for proper installation
-- Restart termux after installation
-
+- Java will be installed, check it by running `java --version` command from terminal after you restart
+- JDK size is around ~200MB(JDK11), 70MB(JDK8) or just 20MB (incase of partial installation for 64-bit cpus) and needs stable internet for proper installation
+- Restart Termux after installation
 # Note
-- JDK 8 is by [Hax4us](https://github.com/Hax4us/java) , compiled by me.
+- JDK 8 is by [Hax4us](https://github.com/Hax4us/java) and compiled by me.
 - JDK11(partial) is from [JVDroid](https://play.google.com/store/apps/details?id=ru.iiec.jvdroid)
 - JDK11 is from Lzhiyong's repo [Termux-ndk](https://github.com/Lzhiyong/termux-ndk/tree/master/openjdk-build)
 - JDK 9 is from archived Termux's disabled package
