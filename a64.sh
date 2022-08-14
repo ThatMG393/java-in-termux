@@ -3,8 +3,11 @@
 #Setup
 shopt -s expand_aliases
 set -e
-info() { echo -e "\333[0;34I: ${1}\333[0";:; }
-err() { echo -e "\333[0;34E: ${1}\333[0"; exit 1;:; } 
+infoClr=\e[34m
+errClr=\e[31m
+defClr=\e[0m
+info() { echo -e "${infoClr}I: ${*}${defClr}";:; }
+err() { echo -e "${errClr}E: ${*}${defClr}"; exit 1;:; } 
 
 curArch=$(uname -m)
 tmpDir=$HOME/dltmp 
@@ -12,7 +15,7 @@ tmpDir=$HOME/dltmp
 jvrgx='"[^"]*"'
 isJavaInstalled() { if [ -e "$PREFIX"/bin/java ] || [ -e "$PREFIX"/share/jvm/openjdk-11.0.1/bin/java ] || [ -e "$PREFIX"/share/jdk8/bin/java ]; then info "It looks like you already have Java $(java -version 2>&1 | grep -o $jvrgx) installed. Exiting..."; exit 0; fi;:; }
 checkForWget() { if ! command -v wget >/dev/null 2>&1; then info "'wget' not found, installing..."; pkg install wget -y; fi;:; }
-createTmpDir() { info "Creating temporary directory for the download file. (Located at ${tmpDir})"; mkdir $tmpDir; cd $tmpDir;:; }
+createTmpDir() { info "Creating a temporary directory. (Located at ${tmpDir})"; mkdir $tmpDir; cd $tmpDir;:; }
 installSuccess() { info "Please restart your Termux session."; info "Check Java by running 'java -version'"; exit 0;:; } 
 
 installOPJDK11() {
@@ -24,7 +27,7 @@ installOPJDK11() {
     wgtStatusCode=$?
     
     if [[ $wgtExitCode -eq 0 ]]; then
-        dpkg -i openjdk11.deb || err "An error occurred while trying to install OpenJDK11."
+        dpkg -i openjdk11.deb || err "An error occurred while trying to install openjdk11.deb"
         cd $PREFIX/share/jvm/openjdk-11.0.1/bin/
         chmod +x *
         
@@ -43,7 +46,7 @@ installJDK11JVD() {
     wget https://github.com/suhan-paradkar/java-in-termux/releases/download/v2.0/openjdk11_jvdroid.deb
     wgtExitCode=$?
     if [[ $wgtExitCode -eq 0 ]]; then
-        dpkg -i openjdk11_jvdroid.deb
+        dpkg -i openjdk11_jvdroid.deb || err "An error occurred while trying to install openjdk11_jvdroid.deb."
         
         info "JDK11 from JVDroid has been installed successfully!"
         info "Note: The JDK11 you installed is a partial JDK and not a full JDK, if you want to install the full version select '1' in the selection."
@@ -61,7 +64,7 @@ installOPJDK8DEB() {
     wget https://github.com/suhan-paradkar/java-in-termux/releases/download/v2.5/openjdk_8.0_aarch64.deb
     wgtExitCode=$?
     if [[ $wgetExitCode -eq 0 ]]; then
-        dpkg -i openjdk_8.0_aarch64.deb
+        dpkg -i openjdk_8.0_aarch64.deb || err "An error occurred while trying to install openjdk_8.0_aarch64.deb"
         echo "export JAVA_HOME=$PREFIX/share/jdk8" >> $HOME/.profile
         echo "PATH=$PREFIX/share/jdk8/bin:$PATH" >> $HOME/.profile
         export JAVA_HOME=$PREFIX/share/jdk8
@@ -87,7 +90,7 @@ installJDK9() {
     wget https://github.com/suhan-paradkar/java-in-termux/releases/download/OpenJDK9/openjdk-9-jdk-headless_9.2017.8.20-1_${curArch}.deb
     wgetExitCode=$?
     if [[ $wgetExitCode -eq 0 ]]; then
-        pkg in ./alsa-lib_1.1.3_${archname}.deb ./openjdk-9-jre-headless_9.2017.8.20-1_${archname}.deb ./openjdk-9-jdk-headless_9.2017.8.20-1_${archname}.deb
+        pkg in ./alsa-lib_1.1.3_${archname}.deb ./openjdk-9-jre-headless_9.2017.8.20-1_${archname}.deb ./openjdk-9-jdk-headless_9.2017.8.20-1_${archname}.deb || err "An error occurred while trying to install (alsa-lib_1.1.3_${curArch}, openjdk-9-jre-headless_9.2017.8.20-1_${curArch}, openjdk-9-jdk-headless_9.2017.8.20-1_${curArch})"
         
         info "Java 9 has been installed successfully!"installSuccess
         installSuccess
