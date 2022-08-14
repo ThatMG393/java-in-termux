@@ -25,7 +25,7 @@ git clone --depth 1 https://github.com/ThatMG393/java-in-termux.git && cd java-i
 - Restart Termux after installation
 
 # Credits
-- JDK 8 is made by [Hax4us](https://github.com/Hax4us/java) and compiled by me to .deb.
+- JDK 8 is made by [Hax4us](https://github.com/Hax4us/java) and compiled to debian package by me.
 - JDK11(partial) is from [JVDroid](https://play.google.com/store/apps/details?id=ru.iiec.jvdroid)
 - JDK11 is from Lzhiyong's [Termux-ndk](https://github.com/Lzhiyong/termux-ndk/tree/master/openjdk-build) repo
 - JDK 9 is from archived Termux's disabled package
