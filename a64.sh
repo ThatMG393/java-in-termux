@@ -23,7 +23,7 @@ installOPJDK11() {
     wget https://github.com/suhan-paradkar/java-in-termux/releases/download/v2.0/openjdk11.deb
     wgtStatusCode=$?
     
-    if [[ $wgtExitCode -eq 0 ]] then
+    if [[ $wgtExitCode -eq 0 ]]; then
         dpkg -i openjdk11.deb || err "An error occurred while trying to install OpenJDK11."
         cd $PREFIX/share/jvm/openjdk-11.0.1/bin/
         chmod +x *
@@ -42,7 +42,7 @@ installJDK11JVD() {
     
     wget https://github.com/suhan-paradkar/java-in-termux/releases/download/v2.0/openjdk11_jvdroid.deb
     wgtExitCode=$?
-    if [[ $wgtExitCode -eq 0 ]] then
+    if [[ $wgtExitCode -eq 0 ]]; then
         dpkg -i openjdk11_jvdroid.deb
         
         info "JDK11 from JVDroid has been installed successfully!"
@@ -60,7 +60,7 @@ installOPJDK8DEB() {
     
     wget https://github.com/suhan-paradkar/java-in-termux/releases/download/v2.5/openjdk_8.0_aarch64.deb
     wgtExitCode=$?
-    if [[ $wgetExitCode -eq 0 ]] then
+    if [[ $wgetExitCode -eq 0 ]]; then
         dpkg -i openjdk_8.0_aarch64.deb
         echo "export JAVA_HOME=$PREFIX/share/jdk8" >> $HOME/.profile
         echo "PATH=$PREFIX/share/jdk8/bin:$PATH" >> $HOME/.profile
@@ -86,7 +86,7 @@ installJDK9() {
     wget https://github.com/suhan-paradkar/java-in-termux/releases/download/OpenJDK9/openjdk-9-jre-headless_9.2017.8.20-1_${curArch}.deb
     wget https://github.com/suhan-paradkar/java-in-termux/releases/download/OpenJDK9/openjdk-9-jdk-headless_9.2017.8.20-1_${curArch}.deb
     wgetExitCode=$?
-    if [[ $wgetExitCode -eq 0 ]] then
+    if [[ $wgetExitCode -eq 0 ]]; then
         pkg in ./alsa-lib_1.1.3_${archname}.deb ./openjdk-9-jre-headless_9.2017.8.20-1_${archname}.deb ./openjdk-9-jdk-headless_9.2017.8.20-1_${archname}.deb
         
         info "Java 9 has been installed successfully!"installSuccess
