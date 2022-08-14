@@ -3,17 +3,17 @@
 #Setup
 shopt -s expand_aliases
 set -e
-info() { echo -e '\333[0;34I: ${1}\333[0' }
-err() { echo -e '\333[0;34E: ${1}\333[0'; exit 1 } 
+info() { echo -e "\333[0;34I: ${1}\333[0";:; }
+err() { echo -e "\333[0;34E: ${1}\333[0"; exit 1;:; } 
 
 curArch=$(uname -m)
 tmpDir=$HOME/dltmp 
 
 jvrgx='"[^"]*"'
-isJavaInstalled() { if [ -e "$PREFIX"/bin/java ] || [ -e "$PREFIX"/share/jvm/openjdk-11.0.1/bin/java ] || [ -e "$PREFIX"/share/jdk8/bin/java ]; then info "It loos like you already have Java $(java -version 2>&1 | grep -o $jvrgx) installed. Exiting..."; exit 0 fi }
-checkForWget() { if ! command -v wget >/dev/null 2>&1; then info "'wget' not found, installing..."; pkg install wget -y fi }
-createTmpDir() { info "Creating temporary directory for the download file. (Located at ${tmpDir})"; mkdir $tmpDir; cd $tmpDir }
-installSuccess() { info "Please restart your Termux session."; info "Check Java by running 'java -version'"; exit 0 } 
+isJavaInstalled() { if [ -e "$PREFIX"/bin/java ] || [ -e "$PREFIX"/share/jvm/openjdk-11.0.1/bin/java ] || [ -e "$PREFIX"/share/jdk8/bin/java ]; then info "It looks like you already have Java $(java -version 2>&1 | grep -o $jvrgx) installed. Exiting..."; exit 0; fi;:; }
+checkForWget() { if ! command -v wget >/dev/null 2>&1; then info "'wget' not found, installing..."; pkg install wget -y; fi;:; }
+createTmpDir() { info "Creating temporary directory for the download file. (Located at ${tmpDir})"; mkdir $tmpDir; cd $tmpDir;:; }
+installSuccess() { info "Please restart your Termux session."; info "Check Java by running 'java -version'"; exit 0;:; } 
 
 installOPJDK11() {
     info "Installing OpenJDK11 for ${curArch}"
@@ -110,11 +110,11 @@ Select one: " prmpt
         2) installJDK11JVD ;;
         3) installOPJDK8DEB ;;
         4) installJDK9 ;;
-         *) err "Invalid option ${slopt}." ;;
+        *) err "Invalid option ${slopt}." ;;
     esac
 } 
 
 #Greetings then start.
-info "Welcome to the Java installer utility script for Termux."
+info "Welcome to the Java installer utility script for Termux"
 isJavaInstalled
 startInstall
