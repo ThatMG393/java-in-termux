@@ -1,11 +1,10 @@
 #!/data/data/com.termux/files/usr/bin/bash 
 
 #Setup
-shopt -s expand_aliases
-set -e
-infoClr=\e[34m
-errClr=\e[31m
-defClr=\e[0m
+# shopt -s expand_aliases
+infoClr="\e[34m"
+errClr="\e[31m"
+defClr="\e[0m"
 info() { echo -e "${infoClr}I: ${*}${defClr}";:; }
 err() { echo -e "${errClr}E: ${*}${defClr}"; exit 1;:; } 
 
