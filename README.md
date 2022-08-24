@@ -1,4 +1,4 @@
-[![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Fsuhan-paradkar%2Fjava-in-termux&count_bg=%2367CB1B&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=true)](https://hits.seeyoufarm.com)
+[![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Fgjbae1212%2Fhit-counter&count_bg=%233DACC8&title_bg=%23555555&icon=github.svg&icon_color=%23F0F0F0&title=Visits&edge_flat=true)](https://hits.seeyoufarm.com)
 
 # Introduction
 Hello people, today I bring to you a script to install Java in [Termux](https://termux.com) without root!
